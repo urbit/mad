@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<link href="UrbitSansTT-Light.ttf" rel="stylesheet">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v6.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+<style>
+ @font-face {
+     font-family: 'Urbit Sans';
+     src: url('UrbitSansTT-SemiBold.ttf');
+ }
+
+ .axis-x .tick:nth-child(2n+1) {
+     visibility: visible;
+ }
+
+ .axis-x .tick:nth-child(2n) {
+     visibility: hidden;
+ }
+
+ body {
+     font-family: 'Urbit Sans'
+ }
+</style>
+
+<script>
+
+ const colorText = "#F7FFFF";
+ const colorBg = "#14141E";
+ const colorRetained = '#5A5A6E';
+ const colorNew = '#A0DCE6';
+ const colorResurrected = "#5A735A"//'#383840';
+ const colorChurned = '#FACDB9';
+ const fontSize = "18px"
+
+ // set the dimensions and margins of the graph
+ const margin = {top: 10, right: 30, bottom: 70, left: 50},
+       width = 1200 - margin.left - margin.right,
+       height = 900 - margin.top - margin.bottom;
+
+ // append the svg object to the body of the page
+ const svg = d3.select("#my_dataviz")
+               .append("svg")
+               .attr("width", width + margin.left + margin.right)
+               .attr("height", height + margin.top + margin.bottom)
+               .style("background-color", "#14141E")
+               .append("g")
+               .attr("transform", `translate(${margin.left},${margin.top})`);
+
+ // Parse the Data
+ d3.csv("mad-urbit-ga.csv").then( function(data) {
+
+     rows = data.slice(81);
+
+     // List of subgroups = header of the csv files sans date and mau
+     const subgroups = data.columns.slice(2)
+
+     // List of groups = date here = value of the first column called date -> I show them on the X axis
+     const dates = rows.map(r => (r.date))
+
+     // Add X axis
+     const xScale = d3.scaleBand()
+                      .domain(dates)
+                      .range([0, width])
+                      .padding([0.2])
+
+     svg.append("g").attr("transform", `translate(0, ${height})`)
+                      .style("font-size", "14")
+                      .style("text-anchor", "end")
+                      .style("font-family", "Urbit Sans")
+                      .style("color", colorText)
+                      .attr("class", "axis-x")
+                      .call(d3.axisBottom(xScale))
+                      .selectAll("text")
+                      .attr("transform", "translate(-10,0)rotate(-45)")
+
+     // Add Y axis
+     const yScale = d3.scaleLinear()
+                      .domain([-40, 100])
+                      .range([ height, 0 ]);
+     svg.append("g")
+        .call(d3.axisLeft(yScale))
+        .style("font-family", "Urbit Sans")
+        .style("color", colorText)
+        .style("font-size", "14")
+
+     // color palette = one color per subgroup
+     const color = d3.scaleOrdinal()
+                     .domain(subgroups)
+                     .range([colorRetained,
+                             colorNew,
+                             colorResurrected,
+                             colorChurned])
+
+     //stack the data? --> stack per subgroup
+     const stackedData = d3.stack().keys(subgroups).offset(d3.stackOffsetDiverging)(rows)
+
+     // Show the bars
+     svg.append("g")
+                           .selectAll("g")
+     // Enter in the stack data = loop key per key = group per group
+                           .data(stackedData)
+                           .join("g")
+                           .attr("fill", d => color(d.key))
+                           .selectAll("rect")
+     // enter a second time = loop subgroup per subgroup to add all rectangles
+                           .data(d => d)
+                           .join("rect")
+                           .attr("x", d => xScale(d.data.date))
+                           .attr("y", d => yScale(Math.max(d[0], d[1])))
+                           .attr("width",xScale.bandwidth())
+                           .attr("height", d => Math.abs(yScale(d[0]) - yScale(d[1])))
+                           .attr("transform", d => (d[1] < d[0]) ? `translate(0,${yScale(d[1]) - yScale(d[0])})` : "")
+
+     // legend
+     svg.append("circle").attr("cx",200).attr("cy",190).attr("r", 8).style("fill", colorRetained)
+     svg.append("circle").attr("cx",200).attr("cy",160).attr("r", 8).style("fill", colorNew)
+     svg.append("circle").attr("cx",200).attr("cy",130).attr("r", 8).style("fill", colorResurrected)
+     svg.append("circle").attr("cx",200).attr("cy",220).attr("r", 8).style("fill", colorChurned)
+     svg.append("text").attr("x", 220).attr("y", 192).text("Retained").style("font-size", fontSize).attr("alignment-baseline","middle").style("fill", colorText);
+     svg.append("text").attr("x", 220).attr("y", 162).text("New").style("font-size", fontSize).attr("alignment-baseline","middle").style("fill", colorText);
+     svg.append("text").attr("x", 220).attr("y", 132).text("Resurrected").style("font-size", fontSize).attr("alignment-baseline","middle").style("fill", colorText);
+     svg.append("text").attr("x", 220).attr("y", 222).text("Churned").style("font-size", fontSize).attr("alignment-baseline","middle").style("fill", colorText);
+
+ })
+
+
+</script>
