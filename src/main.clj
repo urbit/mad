@@ -16,7 +16,7 @@
 (def ds (jdbc/get-datasource db))
 
 (def github-auth-token
-  "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")
+  "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")
 
 (defn create-tables! [ds]
   (do

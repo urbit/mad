@@ -25,7 +25,16 @@
 ;; TODO: ensure that electric capital's data is updated per the below, which has
 ;; deviated
 (def known-repositories
-  [{:owner "dalten-collective", :repo "agent-skeleton"}
+  [{:owner "ashelkovnykov", :repo "urbit-hosting"}
+   {:owner "forchesta", :repo "urbit-dev"}
+   {:owner "liam-fitzgerald", :repo "urbit-openai"}
+   {:owner "matthew-levan", :repo "tell"}
+   {:owner "nodreb-borrus", :repo "sigil-render"}
+   {:owner "hanryc-tirpur", :repo "trail-mobile"}
+   {:owner "hanryc-tirpur", :repo "trail"}
+   {:owner "cyclomancer", :repo "bet"}
+   {:owner "cyclomancer", :repo "ccrur"}
+   {:owner "dalten-collective", :repo "agent-skeleton"}
    {:owner "dalten-collective", :repo "books"}
    {:owner "dalten-collective", :repo "cgol"}
    {:owner "dalten-collective", :repo "channel"}
@@ -80,30 +89,41 @@
    {:owner "hosted-fornet", :repo "whitelist"}
    {:owner "jackfoxy", :repo "urQL"}
    {:owner "johnhyde", :repo "astrolabe"}
+   {:owner "midlyx-hatrys", :repo "urbit-cob"}
    {:owner "midsum-salrux", :repo "faux"}
+   {:owner "midsum-salrux", :repo "gato"}
    {:owner "midsum-salrux", :repo "tendiebot"}
    {:owner "mopfel-winrux", :repo "NockPU"}
+   {:owner "mopfel-winrux", :repo "urbit-umbrel"}
    {:owner "Native-Planet", :repo "anchor"}
    {:owner "Native-Planet", :repo "anchor-source"}
    {:owner "Native-Planet", :repo "GroundSeg"}
    {:owner "Native-Planet", :repo "urbit-casaos"}
    {:owner "Native-Planet", :repo "uart-agent"}
    {:owner "niblyx-malnus", :repo "nested-goals"}
+   {:owner "niblyx-malnus", :repo "surf"}
+   {:owner "niblyx-malnus", :repo "goals"}
    {:owner "niblyx-malnus", :repo "clibox"}
+   {:owner "niblyx-malnus", :repo "login"}
    {:owner "Other-Life", :repo "page"}
    {:owner "robkorn", :repo "urbit-content-archiver"}
    {:owner "ryjm", :repo "citadel"}
    {:owner "ryjm", :repo "srrs"}
-   {:owner "sidnym-ladrut", :repo "quorum"}
+   {:owner "orlin" :repo "urbit-desk-thing"}
+   {:owner "j3-productions", :repo "quorum"}
    {:owner "sidnym-ladrut", :repo "pantheon"}
    {:owner "sigilante", :repo "l10n"}
    {:owner "sigilante", :repo "lazytrig"}
    {:owner "sigilante", :repo "mush"}
    {:owner "sigilante", :repo "chronos"}
+   {:owner "sigilante", :repo "rpn"}
    {:owner "taalhavras", :repo "ucal"}
    {:owner "Tenari", :repo "lift"}
+   {:owner "Tenari", :repo "urbit-heroes"}
    {:owner "Tenari", :repo "ur-recipes"}
+   {:owner "Tenari", :repo "ur-tasks"}
    {:owner "thecommons-urbit", :repo "chess"}
+   {:owner "litlep-nibbyt", :repo "forums"}
    {:owner "tinnus-napbus", :repo "base16-hoon"}
    {:owner "tinnus-napbus", :repo "beacon"}
    {:owner "tinnus-napbus", :repo "docs-app"}
@@ -111,6 +131,7 @@
    {:owner "tinnus-napbus", :repo "straw"}
    {:owner "tirrel-corp", :repo "scene"}
    {:owner "tirrel-corp", :repo "studio"}
+   {:owner "tloncorp", :repo "arigato"}
    {:owner "tloncorp", :repo "bouncer"}
    {:owner "tloncorp", :repo "hoon-vscode"}
    {:owner "tloncorp", :repo "landscape-apps"}
@@ -126,6 +147,7 @@
    {:owner "uqbar-dao", :repo "rdbms"}
    {:owner "uqbar-dao", :repo "nectar"}
    {:owner "uqbar-dao", :repo "sirens-of-uqbar"}
+   {:owner "uqbar-dao", :repo "react-native-api"}
    {:owner "uqbar-dao", :repo "ui-components"}
    {:owner "uqbar-dao", :repo "uqbar-core"}
    {:owner "uqbar-dao", :repo "urbit-mobile-app-template"}
@@ -194,7 +216,7 @@
    {:owner "urbit", :repo "network-api"}
    {:owner "urbit", :repo "network-api-deprecated"}
    {:owner "urbit", :repo "network-explorer"}
-   {:owner "urbit", :repo "new-mars"}
+   {:owner "urbit", :repo "ares"}
    {:owner "urbit", :repo "nock-js"}
    {:owner "urbit", :repo "nockjs"}
    {:owner "urbit", :repo "noun"}
@@ -243,6 +265,8 @@
    {:owner "urbit", :repo "womb"}
    {:owner "urbit", :repo "work-app"}
    {:owner "urbit", :repo "write"}
+   {:owner "urbit", :repo "js-http-api"}
+   {:owner "urbit", :repo "tools"}
    {:owner "Vrend", :repo "urbit-go"}
    {:owner "yosoyubik", :repo "canvas"}
    {:owner "tomholford" :repo "hodl"}
