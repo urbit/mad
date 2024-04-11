@@ -32,13 +32,9 @@
 
  const colorText = "#F7FFFF";
  const colorBg = "#14141E";
- /* const colorText = "#14141E";
-  * const colorBg = "#F7FFFF";
-  */
  const colorRetained = '#5A5A6E';
  const colorNew = '#A0DCE6';
- /* const colorResurrected = "#5A735A"//'#383840'; */
- const colorResurrected = '#383840';
+ const colorResurrected = "#5A735A"//'#383840';
  const colorChurned = '#FACDB9';
  const fontSize = "18px"
 
@@ -52,12 +48,12 @@
                .append("svg")
                .attr("width", width + margin.left + margin.right)
                .attr("height", height + margin.top + margin.bottom)
-               .style("background-color", colorBg)
+               .style("background-color", "#14141E")
                .append("g")
                .attr("transform", `translate(${margin.left},${margin.top})`);
 
  // Parse the Data
- d3.csv("mad-urbit-ga.csv").then( function(data) {
+ d3.csv("mad-filecoin-ga.csv").then( function(data) {
 
      rows = data.slice(81);
 
@@ -85,7 +81,7 @@
 
      // Add Y axis
      const yScale = d3.scaleLinear()
-                      .domain([-50, 105])
+                      .domain([-250, 500])
                       .range([ height, 0 ]);
      svg.append("g")
         .call(d3.axisLeft(yScale))
