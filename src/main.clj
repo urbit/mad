@@ -15,7 +15,7 @@
 (def ds (jdbc/get-datasource db))
 
 (def github-auth-token
-  "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")
+  "")
 
 (defn create-tables! [ds]
   (do
@@ -162,7 +162,8 @@ CREATE TABLE IF NOT EXISTS commit (
                                                (sqlh/do-nothing)))
                               (sqlh/returning :*)
                               sql/format))
-        (if-let [next (and (not (has-commit? (last body))) (:next links))]
+        ;; TODO: As an experiment, eliminate the `has-commit?` check with urbit (will take longer) to ensure we're not missing anything
+        (if-let [next (and #_(not (has-commit? (last body))) (:next links))]
           (do
             (println (format ">> COMMITS: %s/%s at url: %s\n"
                              owner repo next))
@@ -183,6 +184,7 @@ CREATE TABLE IF NOT EXISTS commit (
     (println (format "REPOSITORIES: wrote %s" (count result)))
     :done))
 
+
 (comment
 
   (ingest-repositories!
@@ -196,6 +198,32 @@ CREATE TABLE IF NOT EXISTS commit (
     mad.data/known-repositories))
 
   (refresh-project! "urbit" {})
+
+  (def urbit-repo-branches
+    [{:owner "Quodss"
+      :repo "urwasm"
+      :branches ["lia-jet"]}
+     {:owner "urbit"
+      :repo "ares"
+      :branches ["eamsden/codegen" "eamsden/codegen-old" "msl/codegen"]}
+     {:owner "urbit",
+      :repo "urbit"
+      :branches ["develop" "lf/neo" "yu/sema" "jb/plot" "yu/sema-mesa"
+                 "next/kelvin/410"]}
+     {:owner "urbit"
+      :repo "vere"
+      :branches ["develop" "jb/plot" "lf/xmas" "yu/mesa" "next/kelvin/410"]}])
+
+  (doseq [{:keys [owner repo branches]} urbit-repo-branches]
+    (doseq [branch branches]
+      (ingest-new-commits!
+       {:repository/project "urbit"
+        :repository/ecosystem "urbit"
+        :repository/owner owner
+        :repository/repo repo}
+       :branch branch)))
+
+  ;; TODO: Eval the above
 
   (ingest-new-commits!
    {:repository/project "urbit"
