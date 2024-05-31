@@ -85,23 +85,24 @@
 
 ;; TODO: ensure that electric capital's data is updated per the below, which has
 
-(def urbit-repo-branches
-  {"urwasm" ["lia"]
-   "ares" ["eamsden/codegen" "eamsden/codegen-old" "msl/codegen"]
-   "urbit" ["develop" "lf/neo" "yu/sema" "jb/plot" "yu/sema-mesa"
-            "next/kelvin/410"]
-   "vere" ["develop" "jb/plot" "lf/xmas" "yu/mesa" "next/kelvin/410"]})
-
 ;; deviated
 (def known-repositories
   [{:owner "midden-fabler" :repo "phoenix-wip"}
    {:owner "midden-fabler" :repo "ahoy"}
    {:owner "midden-fabler" :repo "fleet"}
+   {:owner "matthiasshaub" :repo "maat"}
+   {:owner "wispem-wantex" :repo "urbit-uniswap"}
+   {:owner "wispem-wantex" :repo "urbit-markdown"}
+   {:owner "wispem-wantex" :repo "recipe-book"}
+   {:owner "NEARBuilders" :repo "near-urbit-canvas"}
    {:owner "tiller-tolbus" :repo "chain"}
+   {:owner "rahul-muster" :repo "urbitapi"}
+   {:owner "irvdude" :repo "mydesk"}
    {:owner "arthyn" :repo "gin-tonic"}
    {:owner "deathtothecorporation" :repo "make"}
    {:owner "deathtothecorporation" :repo "mask"}
    {:owner "darighost" :repo "cen-chan"}
+   {:owner "darighost" :repo "roon"}
    {:owner "Anseta" :repo "urbit-tea"}
    {:owner "archetype-org" :repo "clack"}
    {:owner "youfoundron" :repo "urbit-academy"}
@@ -122,9 +123,22 @@
    {:owner "salbaroudi" :repo "Quoridor"}
    {:owner "urbitme" :repo "urbit-ob-rs"}
    {:owner "urbitme" :repo "sigil-phonemes"}
+   {:owner "tocwex" :repo "fund"}
+   {:owner "dogsoceans" :repo "ama"}
+   {:owner "dogsoceans" :repo "foes"}
+   {:owner "dogsoceans" :repo "friend-adder3"}
+   {:owner "dogsoceans" :repo "prism"}
+   {:owner "dogsoceans" :repo "-urspace"}
+   {:owner "dogsoceans" :repo "-onion"}
+   {:owner "dogsoceans" :repo "simple-notes"}
+   {:owner "dogsoceans" :repo "rudpage"}
+   {:owner "dogsoceans" :repo "roon"}
+   {:owner "charlieroth" :repo "hoon-school"}
+   {:owner "elliotBraem" :repo "near-urbit-tldraw"}
    {:owner "yungcalibri" :repo "pharos"}
    {:owner "sidnym-ladrut" :repo "urbitswap"}
    {:owner "urbitswap" :repo "urbitswap"}
+   {:owner "bantus-follus" :repo "schizohost"}
    {:owner "Native-Planet" :repo "onyx"}
    {:owner "fischsauce" :repo "delta"}
    {:owner "dmvianna" :repo "delta"}
@@ -244,6 +258,8 @@
    {:owner "johnhyde", :repo "astrolabe"}
    {:owner "johnhyde", :repo "turf"}
    {:owner "johnhyde", :repo "monkey"}
+   {:owner "R-JG", :repo "homunculus"}
+   {:owner "R-JG", :repo "mast"}
    {:owner "midlyx-hatrys", :repo "urbit-cob"}
    {:owner "midsum-salrux", :repo "faux"}
    {:owner "midsum-salrux", :repo "gato"}
@@ -308,6 +324,7 @@
    {:owner "urbit" :repo "create-near-app"}
    {:owner "urbit" :repo "NearSocialVM"}
    {:owner "urbit" :repo "Aegean"}
+   {:owner "urbit", :repo "id.urbit.org"}
    {:owner "urbit", :repo "antechamber"}
    {:owner "urbit", :repo "archaeology"}
    {:owner "urbit", :repo "archaeology-factor"}
@@ -367,6 +384,9 @@
    {:owner "urbit"
     :repo "ares"
     :branches ["eamsden/codegen" "eamsden/codegen-old" "msl/codegen"]}
+   {:owner "urbit"
+    :repo "shrub"
+    :branches ["develop"]}
    {:owner "urbit", :repo "nock-js"}
    {:owner "urbit", :repo "nockjs"}
    {:owner "urbit", :repo "noun"}
