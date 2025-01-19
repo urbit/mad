@@ -87,7 +87,29 @@
 
 ;; deviated
 (def known-repositories
-  [{:owner "midden-fabler" :repo "phoenix-wip"}
+  [
+   {:owner "deelawn",
+    :repo "urbit-gob",
+    :added #inst "2024-08-02T04:48:52.327-00:00"}
+   {:owner "narskidan" :repo "chatbot.hoon" :added #inst "2024-08-02T04:53:09.889-00:00"}
+   {:owner "narskidan" :repo "roon" :added #inst "2024-08-02T04:53:09.889-00:00"}
+   {:owner "nodsup-halnux" :repo "wui" :added #inst "2024-08-07T22:09:34.442-00:00"}
+   {:owner "nodsup-halnux" :repo "Advanced-Hoon" :added #inst "2024-08-07T22:09:34.442-00:00"}
+   {:owner "coeli-network" :repo "tyr" :added #inst "2024-08-02T04:53:09.889-00:00"}
+   {:owner "IzaacMammadov" :repo "Hoon-Black-Scholes" :added #inst "2024-08-02T04:53:09.889-00:00"}
+   {:owner "archetype-org" :repo "golem"}
+   {:owner "lynko" :repo "urbit-names"}
+   {:owner "lynko" :repo "re.hoon"}
+   {:owner "lynko" :repo "holo-9000"}
+   {:owner "dogsocean" :repo "speed-test"}
+   {:owner "niblyx-malnus" :repo "Urbit-Monads-Tutorial"}
+   {:owner "ajlamarc" :repo "urbit-defi"}
+   {:owner "darighost" :repo "goals-bot"}
+   {:owner "kitcat003" :repo "hoon-academy"}
+   {:owner "mikolajpp" :repo "hoon-git"}
+   {:owner "mikolajpp" :repo "bytestream" :added #inst "2024-08-02T04:53:09.889-00:00"}
+   {:owner "bantus-follus" :repo "decadence"}
+   {:owner "midden-fabler" :repo "phoenix-wip"}
    {:owner "midden-fabler" :repo "ahoy"}
    {:owner "midden-fabler" :repo "fleet"}
    {:owner "matthiasshaub" :repo "maat"}
@@ -291,6 +313,8 @@
    {:owner "sigilante", :repo "mush"}
    {:owner "sigilante", :repo "chronos"}
    {:owner "sigilante", :repo "rpn"}
+   {:owner "sigilante" :repo "just" :added #inst "2024-08-02T04:54:29.826-00:00"}
+   {:owner "sigilante" :repo "seek" :added #inst "2024-08-02T04:54:29.826-00:00"}
    {:owner "taalhavras", :repo "ucal"}
    {:owner "Tenari", :repo "lift"}
    {:owner "Tenari", :repo "urbit-heroes"}
